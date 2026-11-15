@@ -1,11 +1,16 @@
 :root {
     
+    --bg-color: #0a0a0a;
     --card-bg: #111111;
+    --bg-panel: #111111;
     --text-primary: #e0e0e0;
     --text-secondary: #a0a0a0;
+    --text-muted: #a0a0a0;
     --accent-green: #64ffda; /* Neon Green for success */
+    --neon-green: #64ffda;
     --accent-red: #ff4757;   /* Red for bugs */
     --accent-cyan: #00d2d3;
+    --neon-cyan: #00d2d3;
     --font-mono: 'Fira Code', monospace;
     --font-sans: 'Inter', sans-serif;
 }
@@ -321,7 +326,21 @@ nav a:hover {
 .exp-header h4 { font-size: 1.2rem; color: #fff; }
 .exp-header .company { color: var(--accent-green); font-family: var(--font-mono); font-size: 0.9rem; }
 .exp-header .date { display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 15px; }
-.exp-details li { margin-left: 20px; color: var(--text-secondary); margin-bottom: 5px; }
+.promo-badge {
+    display: inline-block;
+    background: rgba(100, 255, 218, 0.12);
+    color: var(--accent-green);
+    border: 1px solid var(--accent-green);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+.exp-details { list-style-type: disc; padding-left: 20px; margin-top: 10px; }
+.exp-details li { margin-left: 0; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.6; }
+.exp-details li strong { color: #f0f0f0; }
 
 /* --- Education & Certs --- */
 .grid-2-col {
@@ -446,8 +465,11 @@ body.hover-bug .cursor-outline {
     gap: 20px;
     border: 1px solid #222;
     transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
 }
-.contact-card:hover { border-color: var(--neon-green); transform: translateY(-5px); }
+.contact-card:hover { border-color: var(--neon-green); transform: translateY(-5px); box-shadow: 0 10px 25px -10px rgba(100, 255, 218, 0.2); }
+.footer { text-align: center; padding: 30px 0 10px; font-family: var(--font-mono); color: var(--text-secondary); font-size: 0.85rem; border-top: 1px solid #222; margin-top: 20px; }
 .icon-box { font-size: 1.8rem; }
 .info-box { display: flex; flex-direction: column; }
 .info-box .label { font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); }
@@ -460,7 +482,9 @@ body.hover-bug .cursor-outline {
     bottom: -50px;
     opacity: 0;
     transition: all 0.4s ease;
-    z-index: 10; /* KEEPS TEXT ON TOP */
+    z-index: 10;
+    left: 10px;
+    right: 10px;
 }
 
 /* 2. The New Hover Effect */
